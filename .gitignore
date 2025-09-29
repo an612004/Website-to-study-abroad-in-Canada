@@ -1,0 +1,9 @@
+# Ignore Next.js build output
+.next/
+# Ignore environment variables
+.env.local
+# Ignore node_modules
+node_modules/
+# Ignore OS and editor files
+.DS_Store
+.vscode/
