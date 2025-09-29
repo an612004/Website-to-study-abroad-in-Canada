@@ -1,0 +1,146 @@
+@tailwind base;
+
+body {
+  overflow-x: hidden
+}
+a {
+  @apply text-blue-700;
+}
+
+a:hover {
+  @apply underline;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.w-1000px {
+  width: 1000px;
+}
+
+.w0-hidden {
+  display: none;
+}
+.-z-1 {
+  z-index: -1;
+}
+
+.footer-bg-color {
+  background-color: #f6f6f6;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #003f4e;
+  position: absolute;
+  height: 2px;
+  width: 30px;
+  transition: transform 800ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+@media (max-width: 767px) {
+
+  .hide-on-phone {
+    display: none;
+  }
+
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+
+  .menu {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    margin-top: 72px;
+    left: 0;
+    border-top: 1px solid #d4d4d4;
+  }
+  #menu-toggle ~ .menu > li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu > li {
+    height: auto;
+    padding: 0.5em;
+    transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    background-color: #fff;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+
+.intro-has-bg {
+  background-image: url("/canada-day-5370627_1920.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+ul.dropdown-shown > li {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+ul.dropdown-shown
+{
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+ul.dropdown-hidden
+{
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 0;
+}
+
+ul.dropdown-hidden > li {
+  height: 0;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 0;
+  transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
